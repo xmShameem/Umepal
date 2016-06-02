@@ -14,6 +14,7 @@ import com.qiito.umepal.R;
 import com.qiito.umepal.Utilvalidate.UtilValidate;
 import com.qiito.umepal.fragments.NewRefereeFragment;
 import com.qiito.umepal.holder.UserObjectHolder;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -65,7 +66,25 @@ public class NewRefereeAdapter extends BaseAdapter {
      else {
         viewHolder = (ViewHolder) convertView.getTag();
     }
-        if (UtilValidate.isNotNull(newRefereeList)){
+
+        if (UtilValidate.isNotNull(newRefereeList.get(position).getProfilePic())){
+            if(!newRefereeList.get(position).getProfilePic().equals(""))
+            {
+                Picasso.with(activity)
+                        .load(newRefereeList.get(position).getProfilePic())
+                        .placeholder(R.drawable.logo_splash)
+                        .error(R.drawable.logo_splash)
+                        .into(viewHolder.pic);
+            }
+
+        }
+
+        if (UtilValidate.isNotNull(newRefereeList.get(position).getFirstName())){
+            viewHolder.name.setText(newRefereeList.get(position).getFirstName());
+
+        }
+        if (UtilValidate.isNotNull(newRefereeList.get(position).getLastName())){
+            viewHolder.name.setText(newRefereeList.get(position).getLastName());
 
         }
 
