@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.qiito.umepal.R;
+import com.qiito.umepal.Utilvalidate.UtilValidate;
 import com.qiito.umepal.fragments.NewRefereeFragment;
 import com.qiito.umepal.holder.UserObjectHolder;
 
@@ -64,6 +65,9 @@ public class NewRefereeAdapter extends BaseAdapter {
      else {
         viewHolder = (ViewHolder) convertView.getTag();
     }
+        if (UtilValidate.isNotNull(newRefereeList)){
+
+        }
 
         return convertView;
     }
