@@ -86,6 +86,11 @@ public class NewRefereeAdapter extends BaseAdapter {
         if (UtilValidate.isNotNull(newRefereeList.get(position).getLastName())){
             viewHolder.name.setText(newRefereeList.get(position).getLastName());
 
+        if(UtilValidate.isNull(newRefereeList.get(position).getPaymentStatus())){
+            viewHolder.confirmButton.setVisibility(View.INVISIBLE);
+
+        }
+
         }
 
         return convertView;
