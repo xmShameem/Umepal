@@ -87,7 +87,7 @@ public class CheckoutListItems extends BaseAdapter {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 
-		// SET VALUES HERE...
+		// SET VALUES HERE..my name.
 		if (UtilValidate.isNotNull(itemList.get(position).getProductname())) {
 			viewHolder.item_name.setText(itemList.get(position).getProductname());
 		}
