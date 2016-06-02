@@ -45,7 +45,7 @@ public class CheckoutListItems extends BaseAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return itemList.size();
+		return itemList.size();//
 	}
 
 	@Override
