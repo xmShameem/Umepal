@@ -59,6 +59,7 @@ public class NewRefereeFragment extends Fragment {
         public void onFinish(int responseCode, Object result) {
             listRefereeBaseHolder = (ListRefereeBaseHolder)result;
 
+
             if(listRefereeBaseHolder.getStatus().equalsIgnoreCase("success")){
                 Toast.makeText(getActivity(),"success",Toast.LENGTH_SHORT).show();
             }else {
