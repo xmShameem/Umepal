@@ -84,9 +84,9 @@ public class NewRefereeAdapter extends BaseAdapter {
 
         }
         //lastName
-       /* if (UtilValidate.isNotNull(newRefereeList.get(position).getLastName())){
+       if (UtilValidate.isNotNull(newRefereeList.get(position).getLastName())){
             viewHolder.name.setText(newRefereeList.get(position).getLastName());
-        }*/
+        }
         if(UtilValidate.isNotNull(newRefereeList.get(position).getPaymentStatus())){
             String paymentStatus=newRefereeList.get(position).getPaymentStatus();
             if (paymentStatus!=null){
