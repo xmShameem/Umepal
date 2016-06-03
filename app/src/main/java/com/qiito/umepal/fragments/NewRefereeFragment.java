@@ -8,14 +8,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.qiito.umepal.R;
+import com.qiito.umepal.adapter.NewRefereeAdapter;
 import com.qiito.umepal.holder.ListRefereeBaseHolder;
 import com.qiito.umepal.holder.UserBaseHolder;
+import com.qiito.umepal.holder.UserObjectHolder;
 import com.qiito.umepal.managers.DbManager;
 import com.qiito.umepal.managers.UserManager;
 import com.qiito.umepal.webservice.AsyncTaskCallBack;
+
+import java.util.List;
 
 /**
  * Created by abin on 26/5/16.
@@ -26,6 +31,8 @@ public class NewRefereeFragment extends Fragment {
     private ListRefereesCallBack listRefereesCallBack;
     private String session;
     private ListRefereeBaseHolder listRefereeBaseHolder;
+    private List<UserObjectHolder> data;
+    ListView newRefList;
 
 
     public NewRefereeFragment() {
@@ -42,14 +49,22 @@ public class NewRefereeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         content = inflater.inflate(R.layout.new_referee_page, container, false);
+        initView();
+
         listRefereesCallBack=new ListRefereesCallBack();
         listRefereeBaseHolder = new ListRefereeBaseHolder();
         session = DbManager.getInstance().getCurrentUserDetails().getSession_id();
+
 
         UserManager.getInstance().ListReferees(getActivity(),session,listRefereesCallBack);
 
 
         return content;
+
+    }
+
+    private void initView() {
+        newRefList= (ListView) content.findViewById(R.id.list_view_my_likes);
 
     }
 
@@ -61,6 +76,8 @@ public class NewRefereeFragment extends Fragment {
 
 
             if(listRefereeBaseHolder.getStatus().equalsIgnoreCase("success")){
+                newRefList.setAdapter(new NewRefereeAdapter(NewRefereeFragment.this,getActivity(),data));
+
 
                 Toast.makeText(getActivity(),"success",Toast.LENGTH_SHORT).show();
             }else {
