@@ -22,17 +22,17 @@ import java.util.List;
  * Created by vivek on 2/6/16.
  */
 public class NewRefereeAdapter extends BaseAdapter {
-    NewRefereeFragment newRefereeFragmentoObject=new NewRefereeFragment();
+   // NewRefereeFragment newRefereeFragmentoObject=new NewRefereeFragment();
     private Activity activity;
     private LayoutInflater inflater;
     private ViewHolder viewHolder;
     private List<UserObjectHolder> newRefereeList;
 
-    public NewRefereeAdapter(NewRefereeFragment newRefereeFragmentoObject, Activity activity,List<UserObjectHolder> newRefereeList) {
-        this.newRefereeFragmentoObject = newRefereeFragmentoObject;
+    public NewRefereeAdapter(Activity activity,List<UserObjectHolder> newRefereeList) {
+        //this.newRefereeFragmentoObject = newRefereeFragmentoObject;
         this.activity = activity;
         inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.viewHolder = viewHolder;
+
         this.newRefereeList=newRefereeList;
     }
 

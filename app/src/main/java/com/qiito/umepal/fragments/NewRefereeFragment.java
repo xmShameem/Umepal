@@ -76,7 +76,12 @@ public class NewRefereeFragment extends Fragment {
 
 
             if(listRefereeBaseHolder.getStatus().equalsIgnoreCase("success")){
-                newRefList.setAdapter(new NewRefereeAdapter(NewRefereeFragment.this,getActivity(),data));
+                if(result==null) {
+                    newRefList.setAdapter(new NewRefereeAdapter(getActivity(), data));
+                }
+                else {
+                    Toast.makeText(getActivity(), "There is No Data to show", Toast.LENGTH_SHORT).show();
+                }
 
 
                 Toast.makeText(getActivity(),"success",Toast.LENGTH_SHORT).show();
