@@ -76,7 +76,7 @@ public class NewRefereeFragment extends Fragment {
 
 
             if(listRefereeBaseHolder.getStatus().equalsIgnoreCase("success")){
-                if(result==null) {
+                if(result!=null) {
                     newRefList.setAdapter(new NewRefereeAdapter(getActivity(),listRefereeBaseHolder.getData()));
                 }
                 else {

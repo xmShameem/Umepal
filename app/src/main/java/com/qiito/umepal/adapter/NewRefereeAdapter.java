@@ -79,21 +79,23 @@ public class NewRefereeAdapter extends BaseAdapter {
 
         }
 
-        if (UtilValidate.isNotNull(newRefereeList.get(position).getFirstName())){
+        if (UtilValidate.isNotNull(newRefereeList.get(position).getFirstName())) {
             viewHolder.name.setText(newRefereeList.get(position).getFirstName());
 
         }
-        if (UtilValidate.isNotNull(newRefereeList.get(position).getLastName())){
+        //lastName
+       /* if (UtilValidate.isNotNull(newRefereeList.get(position).getLastName())){
             viewHolder.name.setText(newRefereeList.get(position).getLastName());
-
+        }*/
         if(UtilValidate.isNotNull(newRefereeList.get(position).getPaymentStatus())){
             String paymentStatus=newRefereeList.get(position).getPaymentStatus();
-            if (paymentStatus==null)
-                viewHolder.confirmButton.setVisibility(View.INVISIBLE);
-               else
+            if (paymentStatus!=null){
                 viewHolder.confirmButton.setVisibility(View.VISIBLE);
+            }
+            else{
+                viewHolder.confirmButton.setVisibility(View.INVISIBLE);
+            }
 
-        }
 
         }
 
