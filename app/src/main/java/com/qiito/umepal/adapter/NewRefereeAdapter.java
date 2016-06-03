@@ -2,6 +2,7 @@ package com.qiito.umepal.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,6 +83,13 @@ public class NewRefereeAdapter extends BaseAdapter {
         if (UtilValidate.isNotNull(newRefereeList.get(position).getFirstName())) {
             viewHolder.name.setText(newRefereeList.get(position).getFirstName());
 
+
+
+
+
+
+
+
         }
         //lastName
        if (UtilValidate.isNotNull(newRefereeList.get(position).getLastName())){
@@ -90,6 +98,7 @@ public class NewRefereeAdapter extends BaseAdapter {
         if(UtilValidate.isNotNull(newRefereeList.get(position).getPaymentStatus())){
             String paymentStatus=newRefereeList.get(position).getPaymentStatus();
             if (paymentStatus!=null){
+                Log.d("PAYMENT STATUS",paymentStatus );
                 viewHolder.confirmButton.setVisibility(View.VISIBLE);
             }
             else{
