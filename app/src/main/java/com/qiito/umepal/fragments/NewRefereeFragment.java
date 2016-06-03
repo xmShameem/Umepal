@@ -31,7 +31,7 @@ public class NewRefereeFragment extends Fragment {
     private ListRefereesCallBack listRefereesCallBack;
     private String session;
     private ListRefereeBaseHolder listRefereeBaseHolder;
-    private List<UserObjectHolder> data;
+
     ListView newRefList;
 
 
@@ -77,7 +77,7 @@ public class NewRefereeFragment extends Fragment {
 
             if(listRefereeBaseHolder.getStatus().equalsIgnoreCase("success")){
                 if(result==null) {
-                    newRefList.setAdapter(new NewRefereeAdapter(getActivity(), data));
+                    newRefList.setAdapter(new NewRefereeAdapter(getActivity(),listRefereeBaseHolder.getData()));
                 }
                 else {
                     Toast.makeText(getActivity(), "There is No Data to show", Toast.LENGTH_SHORT).show();

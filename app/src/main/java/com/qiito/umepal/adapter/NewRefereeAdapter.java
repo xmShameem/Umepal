@@ -87,7 +87,11 @@ public class NewRefereeAdapter extends BaseAdapter {
             viewHolder.name.setText(newRefereeList.get(position).getLastName());
 
         if(UtilValidate.isNotNull(newRefereeList.get(position).getPaymentStatus())){
-            viewHolder.confirmButton.setVisibility(View.INVISIBLE);
+            String paymentStatus=newRefereeList.get(position).getPaymentStatus();
+            if (paymentStatus==null)
+                viewHolder.confirmButton.setVisibility(View.INVISIBLE);
+               else
+                viewHolder.confirmButton.setVisibility(View.VISIBLE);
 
         }
 
